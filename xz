@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    ServerAdmin kamilawkosmowska@gmail.com
+    ServerName kamila.project
+    ServerAlias www.kamila.project
+    DocumentRoot /usr/share/nginx/www/public_html
+    ErrorLog /usr/share/nginx/www/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+<VirtualHost _default_:443>
+   ServerName kamila.project
+    ServerAlias www.kamila.project
+    DocumentRoot /usr/share/nginx/www/public_html
+    ErrorLog /usr/share/nginx/www/error.log
+    SSLEngine on
+    SSLCertificateKeyFile /etc/apache2/ssl/website.key
+    SSLCertificateFile /etc/apache2/ssl/website.cert
+</VirtualHost>
